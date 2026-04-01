@@ -1,6 +1,6 @@
-import { TaskManager } from './TaskManager';
-import { UIRenderer } from './UIRenderer';
-import { Task, TaskFilter } from './types';
+import { TaskManager } from './TaskManager.js';
+import { UIRenderer } from './UIRenderer.js';
+import { Task, TaskFilter } from './types.js';
 
 class TaskDashboard {
     private taskManager: TaskManager;
@@ -9,17 +9,26 @@ class TaskDashboard {
     private editingTaskId: string | null = null;
 
     constructor() {
+        console.log('TaskDashboard constructor called');
         this.taskManager = new TaskManager();
         this.uiRenderer = new UIRenderer();
         this.initializeEventListeners();
         this.render();
+        console.log('TaskDashboard constructor completed');
     }
 
     private initializeEventListeners(): void {
         // Add task button
-        document.getElementById('addTaskBtn')!.addEventListener('click', () => {
-            this.openModal();
-        });
+        const addTaskBtn = document.getElementById('addTaskBtn');
+        console.log('Add task button found:', addTaskBtn);
+        if (addTaskBtn) {
+            addTaskBtn.addEventListener('click', () => {
+                console.log('Add task button clicked!');
+                this.openModal();
+            });
+        } else {
+            console.error('Add task button not found!');
+        }
 
         // Clear completed button
         document.getElementById('clearCompletedBtn')!.addEventListener('click', () => {
@@ -162,5 +171,7 @@ class TaskDashboard {
 
 // Initialize the dashboard when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, initializing dashboard...');
     new TaskDashboard();
+    console.log('Dashboard initialized');
 });

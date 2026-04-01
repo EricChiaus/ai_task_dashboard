@@ -1,4 +1,4 @@
-import { Task, TaskStatus, TaskPriority } from './types';
+import { Task, TaskStatus, TaskPriority } from './types.js';
 
 export class UIRenderer {
     private tasksContainer: HTMLElement;

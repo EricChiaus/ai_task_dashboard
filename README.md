@@ -116,15 +116,58 @@ This application supports all modern browsers:
 - Safari (version 14+)
 - Edge (version 90+)
 
-## Contributing
+## Testing
 
-Feel free to submit issues or enhancement requests. Key areas for potential improvement:
+This project includes comprehensive testing with both unit tests and end-to-end tests.
 
-- Task due dates and reminders
-- Task categories or tags
-- Drag-and-drop reordering
-- Export/import functionality
-- Team collaboration features
+### Unit Tests
+
+Unit tests are written using Jest and test the core business logic:
+
+```bash
+# Run all unit tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+```
+
+**Unit Test Coverage:**
+- **TaskManager Class**: Full CRUD operations, filtering, statistics, and localStorage persistence
+- **UIRenderer Class**: DOM manipulation, task rendering, statistics updates, and HTML escaping
+- **29 test cases** covering all major functionality
+
+### End-to-End Tests
+
+E2E tests are written using Playwright and test the complete user experience:
+
+```bash
+# Run all E2E tests
+npm run test:e2e
+
+# Run E2E tests with UI
+npm run test:e2e:ui
+
+# Run E2E tests in headed mode (visible browser)
+npm run test:e2e:headed
+```
+
+**E2E Test Coverage:**
+- Dashboard loading and empty states
+- Task creation, editing, and deletion
+- Filtering by status and priority
+- Search functionality
+- Statistics dashboard updates
+- Modal interactions
+- Form validation
+- Data persistence across page reloads
+- **13 test scenarios** across Chrome, Firefox, and Safari
+
+### Test Reports
+
+After running tests, you can view detailed reports:
+- Unit test coverage: `coverage/lcov-report/index.html`
+- E2E test report: `npx playwright show-report`
 
 ## License
 

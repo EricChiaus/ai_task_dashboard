@@ -1,4 +1,4 @@
-import { Task, TaskFilter, TaskStats, TaskStatus, TaskPriority } from './types';
+import { Task, TaskFilter, TaskStats, TaskStatus, TaskPriority } from './types.js';
 
 export class TaskManager {
     private tasks: Task[] = [];
