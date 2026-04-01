@@ -54,9 +54,6 @@ temp/
 # Optional eslint cache
 .eslintcache
 
-# Server files
-server.js
-
 # Playwright
 test-results/
 playwright-report/
