@@ -1,0 +1,21 @@
+{
+  "name": "ai-task-dashboard",
+  "version": "1.0.0",
+  "description": "A modern task management dashboard built with TypeScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "serve": "python -m http.server 8080",
+    "start": "npm run build && npm run serve"
+  },
+  "keywords": ["task-management", "dashboard", "typescript", "productivity"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@types/node": "^20.10.5"
+  }
+}
