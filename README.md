@@ -46,6 +46,11 @@ A modern, responsive task management dashboard built with TypeScript, featuring 
    ```bash
    npm run serve
    ```
+   
+   **Alternative**: Use the included Node.js server:
+   ```bash
+   node server.js
+   ```
 
 6. Open your browser and navigate to `http://localhost:8080`
 
