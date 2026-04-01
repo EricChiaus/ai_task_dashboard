@@ -1,5 +1,5 @@
 import { TaskManager } from '../../src/TaskManager';
-import { Task, TaskPriority, TaskStatus } from '../../src/types';
+import { TaskStatus, TaskPriority } from '../../src/types';
 
 describe('TaskManager', () => {
   let taskManager: TaskManager;
@@ -61,14 +61,14 @@ describe('TaskManager', () => {
     });
 
     it('should return all tasks when tasks exist', () => {
-      const task1 = taskManager.createTask({
+      taskManager.createTask({
         title: 'Task 1',
         description: '',
         priority: 'low',
         status: 'pending'
       });
 
-      const task2 = taskManager.createTask({
+      taskManager.createTask({
         title: 'Task 2',
         description: '',
         priority: 'high',

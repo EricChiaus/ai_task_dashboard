@@ -2,6 +2,13 @@ import { TaskManager } from './TaskManager.js';
 import { UIRenderer } from './UIRenderer.js';
 import { Task, TaskFilter } from './types.js';
 
+declare global {
+  interface Window {
+    confirm: (message?: string) => boolean;
+    alert: (message?: any) => void;
+  }
+}
+
 class TaskDashboard {
     private taskManager: TaskManager;
     private uiRenderer: UIRenderer;
@@ -63,13 +70,13 @@ class TaskDashboard {
 
         document.getElementById('statusFilter')!.addEventListener('change', (e) => {
             const value = (e.target as HTMLSelectElement).value;
-            this.currentFilter.status = value as any || undefined;
+            this.currentFilter.status = (value as any) ?? undefined;
             this.render();
         });
 
         document.getElementById('priorityFilter')!.addEventListener('change', (e) => {
             const value = (e.target as HTMLSelectElement).value;
-            this.currentFilter.priority = value as any || undefined;
+            this.currentFilter.priority = (value as any) ?? undefined;
             this.render();
         });
 

@@ -1,4 +1,4 @@
-import { Task, TaskFilter, TaskStats, TaskStatus, TaskPriority } from './types.js';
+import { Task, TaskFilter, TaskStats } from './types.js';
 
 export class TaskManager {
     private tasks: Task[] = [];
@@ -70,7 +70,7 @@ export class TaskManager {
     }
 
     getTask(id: string): Task | null {
-        return this.tasks.find(task => task.id === id) || null;
+        return this.tasks.find(task => task.id === id) ?? null;
     }
 
     getAllTasks(): Task[] {
